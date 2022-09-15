@@ -1,6 +1,6 @@
 package player;
 
-import game.Case;
+import board.Case;
 
 public class Player {
 	
@@ -8,6 +8,7 @@ public class Player {
 	int balance;
 	String pion;
 	Case oldCase = null;
+	int location;
 	
 	
 	public Player(String name, int money, String pion) {
@@ -15,6 +16,7 @@ public class Player {
 		this.name = name;
 		this.balance = money;
 		this.pion = pion;
+		this.location = 0;
 	}
 	
 	public void pay(Player p, int value) {
@@ -49,6 +51,10 @@ public class Player {
 	
 	public void setPion(String pion) {
 		this.pion = pion;
+	}
+	
+	public int getLocation() {
+		return this.location;
 	}
 	
 	

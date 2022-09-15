@@ -1,8 +1,6 @@
-package game;
+package player;
 
 import java.util.ArrayList;
-
-import player.Player;
 
 public class PlayerList {
 	ArrayList<Player> playerList = new ArrayList<>();
@@ -31,5 +29,9 @@ public class PlayerList {
 	public Boolean hasDifferentPion() {
 		System.out.println("Not implemented");
 		return true;
+	}
+	
+	public ArrayList<Player> getList() {
+		return playerList;
 	}
 }

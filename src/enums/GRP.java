@@ -1,12 +1,12 @@
 package enums;
 
 public enum GRP {
-	BLEU,
-	VERT,
-	ROUGE,
-	VIOLET,
-	ROSE,
-	ORANGE,
-	JAUNE,
-	DORE
+	C,
+	V,
+	G,
+	A,
+	E,
+	B,
+	D,
+	S
 }

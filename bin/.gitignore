@@ -1,5 +1,4 @@
-/enums/
+/board/
 /game/
-/interfaces/
 /player/
-/ui/
+/enums/

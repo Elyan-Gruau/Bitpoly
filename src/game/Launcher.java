@@ -3,6 +3,7 @@ package game;
 import java.util.ArrayList;
 
 import player.Player;
+import player.PlayerList;
 
 public class Launcher {
 	/*
