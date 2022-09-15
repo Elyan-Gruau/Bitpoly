@@ -1,0 +1,16 @@
+package enums;
+
+public enum LotType {
+	PRISON,
+	LAND,
+	GARE,
+	SPECIAL,
+	CAISSECOM,
+	CHANCE,
+	IMPOT_ELEC,
+	IMPOT_REV,
+	IMPOT_EAU,
+	GO_PRISON,
+	TAXE_LUXE,
+	PARC
+}
