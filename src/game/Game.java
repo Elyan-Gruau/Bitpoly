@@ -26,11 +26,11 @@ public class Game {
 	}
 	
 	public void start() {
-		// tout les joueurs lancent les dès, celui qui à la somme la plus élevée commence.
+		// tout les joueurs lancent les dï¿½s, celui qui ï¿½ la somme la plus ï¿½levï¿½e commence.
 		// Si doublet le joueur doit jouer une fois de plus
 		// 3 doublets d'affiler -> prison
-		// Si GO dépasser ou dessus dans le sens des flèches alors verser 200euro (salaire) sauf si il était avant sur la case go.
-		// Enchère peuvent commencer à n'import quel prix
+		// Si GO dï¿½passer ou dessus dans le sens des flï¿½ches alors verser 200euro (salaire) sauf si il ï¿½tait avant sur la case go.
+		// Enchï¿½re peuvent commencer ï¿½ n'import quel prix
 		
 	
 		this.show();
@@ -57,7 +57,7 @@ public class Game {
 			pZone+=" ";
 		}
 		
-		System.out.println("·——·——————————————·");
+		System.out.println("â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”");
 		for (Case c:board.getBoard()) {
 			if (c.hasVisitor()) {
 				String vString =c.VisitorsPions();
@@ -74,7 +74,7 @@ public class Game {
 			}
 			
 		}
-		System.out.println("·——·——————————————·");
+		System.out.println("â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”");
 	}
 	
 	
