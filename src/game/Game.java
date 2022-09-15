@@ -32,30 +32,58 @@ public class Game {
 		// Si GO dépasser ou dessus dans le sens des flèches alors verser 200euro (salaire) sauf si il était avant sur la case go.
 		// Enchère peuvent commencer à n'import quel prix
 		
-		this.concord();
+	
+		this.show();
+		pList.getList().get(0).move(3);
+	
+		this.show();
+		pList.getList().get(1).move(30);
+		
+		this.show();
+		
+		pList.getList().get(1).move(11);
+		
 		this.show();
 	}
 	
 	
 	
 	public void show() {
+		this.concord();
 		int maxP = this.getMaxPlayerPerCase();
-		System.out.println(maxP);
+		//System.out.println(maxP);
 		String pZone="";
 		for (int i=0; i<maxP;i++) {
 			pZone+=" ";
 		}
 		
-		
-		
+		System.out.println("·——·——————————————·");
 		for (Case c:board.getBoard()) {
-			System.out.println(pZone+"|"+c.getInfo());
+			if (c.hasVisitor()) {
+				String vString =c.VisitorsPions();
+				if (vString.length()<pZone.length()) {
+					int dif = pZone.length()-vString.length();
+					for (int i=0;i<dif;i++) {
+						vString+=" ";
+					}
+				}
+				System.out.println(vString+"|"+c.getInfo());
+			}
+			else {
+				System.out.println(pZone+"|"+c.getInfo());
+			}
+			
 		}
+		System.out.println("·——·——————————————·");
 	}
 	
 	
-	public void concord() {
+	public void concord() { //Set the same location value for the player and the case
 		ArrayList<Case> b = board.getBoard();
+		for (Case c:b) {
+			c.clearVisitor();
+		}
+		
 		for (Player p:pList.getList()) {
 			Case c = b.get(p.getLocation());	
 			c.addVisitor(p);

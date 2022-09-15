@@ -33,6 +33,19 @@ public class Player {
 		}
 	}
 	
+	
+	public void move(int value) {
+		int boardSize=40;
+		
+		int curPos = this.getLocation();
+		if (value+curPos>boardSize-1) { //BOARD SIZE
+			this.location=curPos+value-boardSize;
+		}
+		else {
+			this.location+=value;
+		}
+	}
+	
 	public Boolean canPay(int price) {
 		return balance >= price;
 	}

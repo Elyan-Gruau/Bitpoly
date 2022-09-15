@@ -32,7 +32,7 @@ public class Plateau {
 		plateau.add(new Case("l1",110,LotType.LAND,GRP.B));                   //19 lot
 		
 		plateau.add(new Case("l1",60,LotType.PARC));                              //20 Parc gratuit
-		plateau.add(new Case("L'Arche",60,LotType.LAND,GRP.S));                //21 l1
+		plateau.add(new Case("L'Arche",2010,LotType.LAND,GRP.S));                //21 l1
 		plateau.add(new Case("Chance",60,LotType.CHANCE));                            //22 l1
 		plateau.add(new Case("B. Labarbe",2500,LotType.LAND,GRP.S));                   //23 l1
 		plateau.add(new Case("R. Dudebas",860,LotType.LAND,GRP.S));                   //24 l1

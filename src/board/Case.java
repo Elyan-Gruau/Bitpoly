@@ -90,6 +90,10 @@ public class Case {
 		return s;
 	}
 	
+	public boolean hasVisitor() {
+		return !this.pList.isEmpty();
+	}
+	
 	public void show() {
 		
 	}
