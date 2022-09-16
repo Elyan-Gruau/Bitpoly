@@ -2,6 +2,8 @@ package player;
 
 import board.Card;
 import board.Case;
+import game.Lancer;
+import interfaces.IPlayer;
 
 
 
@@ -39,6 +41,7 @@ public class IA implements IPlayer{
 		if (this.canPay(c.getPrice()) && c.isBuyable()) {
 			this.balance -= price;
 			c.newOwner(this);
+			
 		}
 	}
 	
@@ -63,7 +66,7 @@ public class IA implements IPlayer{
 		return balance;
 	}
 	
-	public void setMoney(int money) {
+	public void setBalance(int money) {
 		this.balance = money;
 	}
 	
@@ -84,6 +87,16 @@ public class IA implements IPlayer{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+
+	@Override
+	public Lancer lanceDes() {
+		return new Lancer();
+	}
+
+	
+	
 	
 	
 	

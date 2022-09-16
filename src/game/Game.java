@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import board.Case;
 import board.Plateau;
+import interfaces.IPlayer;
 import player.IA;
 import player.PlayerList;
 
@@ -33,17 +34,19 @@ public class Game {
 		// Ench�re peuvent commencer � n'import quel prix
 		
 	
-		this.show();
-		pList.getList().get(0).move(3);
-	
-		this.show();
-		pList.getList().get(1).move(30);
 		
-		this.show();
 		
-		pList.getList().get(1).move(11);
-		
-		this.show();
+		int manche = 4;
+		for (int i=0; i<manche;i++) {
+			for (interfaces.IPlayer p:pList.getList()) {
+				Lancer lancer = p.lanceDes();
+				p.move(lancer.sum);
+				
+				
+				
+				this.show();
+			}
+		}
 	}
 	
 	
@@ -84,7 +87,7 @@ public class Game {
 			c.clearVisitor();
 		}
 		
-		for (IA p:pList.getList()) {
+		for (IPlayer p:pList.getList()) {
 			Case c = b.get(p.getLocation());	
 			c.addVisitor(p);
 		}
@@ -98,7 +101,7 @@ public class Game {
 			cpt.add(0);
 		}
 
-		for(IA p:pList.getList()) {
+		for(IPlayer p:pList.getList()) {
 			int oldValue = cpt.get(p.getLocation());
 			oldValue++;
 			cpt.set(p.getLocation(), oldValue);

@@ -2,8 +2,10 @@ package player;
 
 import java.util.ArrayList;
 
+import interfaces.IPlayer;
+
 public class PlayerList {
-	ArrayList<IA> playerList = new ArrayList<>();
+	ArrayList<IPlayer> playerList = new ArrayList<>();
 	
 	
 	
@@ -17,8 +19,13 @@ public class PlayerList {
 	}
 	
 	public void setBalance(int value) {
-		for (IA p:playerList) {
-			p.setMoney(value);
+		for (IPlayer p:playerList) {
+			
+			if (p.getClass().equals(IA.class)) {
+				((IA)p).setBalance(value);
+			}else {
+				((Player)p).setBalance(value);
+			}
 		}
 	}
 	
@@ -31,7 +38,7 @@ public class PlayerList {
 		return true;
 	}
 	
-	public ArrayList<IA> getList() {
+	public ArrayList<IPlayer> getList() {
 		return playerList;
 	}
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import enums.GRP;
 import enums.LotType;
+import interfaces.IPlayer;
 import player.IA;
 
 public class Case {
@@ -13,7 +14,7 @@ public class Case {
 	GRP color;
 	IA owner;
 	boolean isOwnable;
-	ArrayList<IA> pList = new ArrayList<>();
+	ArrayList<IPlayer> pList = new ArrayList<>();
 	
 	
 	public Case(String name, int price, LotType special, GRP color) {
@@ -51,8 +52,10 @@ public class Case {
 	}
 	
 	public boolean isBuyable() {
-		System.out.println("Not implemented");
-		return true;
+		if (this.isOwnable && this.owner == null) {
+			return true;
+		}
+		return false;
 	}
 	
 	public String getInfo() {
@@ -74,7 +77,7 @@ public class Case {
 		
 	}
 	
-	public void addVisitor(IA p) {
+	public void addVisitor(IPlayer p) {
 		this.pList.add(p);
 	}
 	
@@ -84,7 +87,7 @@ public class Case {
 	
 	public String VisitorsPions() {
 		String s="";
-		for (IA p:pList) {
+		for (IPlayer p:pList) {
 			s+=p.getPion();
 		}
 		return s;
