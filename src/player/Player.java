@@ -1,75 +1,56 @@
 package player;
 
+import board.Card;
 import board.Case;
 
-public class Player {
-	
+public class Player implements IPlayer{
+
 	String name;
 	int balance;
 	String pion;
 	Case oldCase = null;
 	int location;
-	
-	
-	public Player(String name, int money, String pion) {
-		super();
-		this.name = name;
-		this.balance = money;
-		this.pion = pion;
-		this.location = 0;
-	}
-	
-	public void pay(Player p, int value) {
-		if (this.canPay(value)) {
-			this.balance -= value;
-			p.balance += value;
-		}
-	}
-	
-	public void buy(Case c,int price) {
-		if (this.canPay(c.getPrice()) && c.isBuyable()) {
-			this.balance -= price;
-			c.newOwner(this);
-		}
-	}
-	
-	
-	public void move(int value) {
-		int boardSize=40;
+
+	@Override
+	public void pay(IPlayer p, int amount) {
+		// TODO Auto-generated method stub
 		
-		int curPos = this.getLocation();
-		if (value+curPos>boardSize-1) { //BOARD SIZE
-			this.location=curPos+value-boardSize;
-		}
-		else {
-			this.location+=value;
-		}
 	}
-	
+
+	@Override
+	public void buy(Case c, int price) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void move(int value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
 	public Boolean canPay(int price) {
-		return balance >= price;
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public int getMoney() {
-		return balance;
+
+	@Override
+	public int getBalance() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
-	public void setMoney(int money) {
-		this.balance = money;
-	}
-	
-	public String getPion() {
-		return pion;
-	}
-	
-	public void setPion(String pion) {
-		this.pion = pion;
-	}
-	
+
+	@Override
 	public int getLocation() {
-		return this.location;
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
-	
-	
+
+	@Override
+	public Card drawCard() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 import enums.GRP;
 import enums.LotType;
-import player.Player;
+import player.IA;
 
 public class Case {
 	String name;
 	int price;
 	LotType type;
 	GRP color;
-	Player owner;
+	IA owner;
 	boolean isOwnable;
-	ArrayList<Player> pList = new ArrayList<>();
+	ArrayList<IA> pList = new ArrayList<>();
 	
 	
 	public Case(String name, int price, LotType special, GRP color) {
@@ -40,7 +40,7 @@ public class Case {
 		this.isOwnable = false;
 	}
 	
-	public void newOwner(Player p) {
+	public void newOwner(IA p) {
 		if ( this.isOwnable) {
 			this.owner = p;
 		}
@@ -74,7 +74,7 @@ public class Case {
 		
 	}
 	
-	public void addVisitor(Player p) {
+	public void addVisitor(IA p) {
 		this.pList.add(p);
 	}
 	
@@ -84,7 +84,7 @@ public class Case {
 	
 	public String VisitorsPions() {
 		String s="";
-		for (Player p:pList) {
+		for (IA p:pList) {
 			s+=p.getPion();
 		}
 		return s;

@@ -1,5 +1,5 @@
 package interfaces;
 
-public class IPlayer {
-
+public abstract class IPlayer {
+	abstract void pay(int amount,IPlayer p);
 }

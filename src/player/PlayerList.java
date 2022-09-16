@@ -3,7 +3,7 @@ package player;
 import java.util.ArrayList;
 
 public class PlayerList {
-	ArrayList<Player> playerList = new ArrayList<>();
+	ArrayList<IA> playerList = new ArrayList<>();
 	
 	
 	
@@ -12,12 +12,12 @@ public class PlayerList {
 		
 	}
 
-	public void add(Player p) {
+	public void add(IA p) {
 		playerList.add(p);
 	}
 	
 	public void setBalance(int value) {
-		for (Player p:playerList) {
+		for (IA p:playerList) {
 			p.setMoney(value);
 		}
 	}
@@ -31,7 +31,7 @@ public class PlayerList {
 		return true;
 	}
 	
-	public ArrayList<Player> getList() {
+	public ArrayList<IA> getList() {
 		return playerList;
 	}
 }

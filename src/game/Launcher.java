@@ -2,12 +2,12 @@ package game;
 
 import java.util.ArrayList;
 
-import player.Player;
+import player.IA;
 import player.PlayerList;
 
 public class Launcher {
 	/*
-	 * 2 à 8 joueur
+	 * 2 ï¿½ 8 joueur
 	 * 
 	 */
 	
@@ -17,8 +17,8 @@ public class Launcher {
 		
 		PlayerList pList = new PlayerList();
 		
-		Player p1 = new Player("John",1500,"X");
-		Player p2 = new Player("Armand",1500,"O");
+		IA p1 = new IA("John",1500,"X");
+		IA p2 = new IA("Armand",1500,"O");
 		
 		
 		pList.add(p1);

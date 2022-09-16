@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 import board.Case;
 import board.Plateau;
-import player.Player;
+import player.IA;
 import player.PlayerList;
 
 public class Game {
 	PlayerList pList;
 	Plateau board = new Plateau();
-	ArrayList<Player> pPos= new ArrayList();
+	ArrayList<IA> pPos= new ArrayList();
 
 	public Game(PlayerList pList) {
 		super();
@@ -84,7 +84,7 @@ public class Game {
 			c.clearVisitor();
 		}
 		
-		for (Player p:pList.getList()) {
+		for (IA p:pList.getList()) {
 			Case c = b.get(p.getLocation());	
 			c.addVisitor(p);
 		}
@@ -98,7 +98,7 @@ public class Game {
 			cpt.add(0);
 		}
 
-		for(Player p:pList.getList()) {
+		for(IA p:pList.getList()) {
 			int oldValue = cpt.get(p.getLocation());
 			oldValue++;
 			cpt.set(p.getLocation(), oldValue);
